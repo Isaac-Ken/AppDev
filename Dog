@@ -1,0 +1,37 @@
+public class Dog {
+
+    // class variables
+    // private access modifiers are used to promote encapsulation
+    private String type;
+    private String breed;
+    private String name;
+    private String topTrick; 
+
+   
+    
+    // parameterized constructor
+    public Dog (String type, String breed, String name) {
+        this.type = type;   // 'this' keyword  to ensure proper variables are called 
+        this.breed = breed; 
+        this.name = name;   
+        topTrick = "";     
+    }
+
+    // methods
+
+    // setter method for topTrick
+    public void setToptrick(String trick) {
+        topTrick = trick;
+        
+        return; // clear the stack frame
+    }
+    
+    // method used to print Dog information
+    public String toString() {
+        String temp = "\nDOG DATA\n" + name + " is a " + breed +
+                ", a " + type + " dog. \nThe top trick is : " +
+                topTrick + ".";
+        return temp;
+    }
+
+}
