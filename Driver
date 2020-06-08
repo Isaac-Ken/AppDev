@@ -1,0 +1,16 @@
+
+public class Driver {
+
+    public static void main(String[] args) {
+        
+        // instantiate the corgi object
+        Corgi corgi = new Corgi ("fat farm", "Pembroke Welsh Corgi", "Chubs", 66, 6);
+        
+        // set top trick for corgi object
+        corgi.setToptrick("Pounding Cheese Burgers like a champ");
+        
+        // print the output to the console
+        System.out.println(corgi.toString());
+    }
+
+}  
