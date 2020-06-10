@@ -9,3 +9,4 @@ public class InputExample {
             birthMonth=scnr.nextInt();
       birthYear=scnr.nextInt();
       System.out.println(birthMonth + "/" +birthYear);
+ 
