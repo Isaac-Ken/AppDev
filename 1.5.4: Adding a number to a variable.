@@ -1,3 +1,6 @@
+//Write a statement that increases numPeople by 5. Ex: If numPeople is initially 10, the output is: There are 15 people.
+
+
 import java.util.Scanner;
 
 public class AssigningNumberToVariable {
