@@ -1,0 +1,42 @@
+//(1) Prompt the user to enter five numbers, being five people's weights. Store the numbers in an array of doubles. Output the array's numbers on one line, each number followed by one space.
+//(2) Also output the total weight, by summing the array's elements. 
+//(3) Also output the average of the array's elements. 
+//(4) Also output the max array element.
+import java.util.Scanner;
+
+
+   public class PeopleWeights {
+     public static void main(String[] args) {
+     Scanner reader = new Scanner(System.in); 
+
+     double weightOne = reader.nextDouble();
+     System.out.println("Enter weight 1: ");
+     double weightTwo = reader.nextDouble();
+     System.out.println("Enter weight 2: ");
+     double weightThree = reader.nextDouble();
+     System.out.println("Enter weight 3: ");
+     double weightFour = reader.nextDouble();
+     System.out.println("Enter weight 4: ");
+     double weightFive = reader.nextDouble();
+     System.out.println("Enter weight 5: \n");
+      double sum = weightOne + weightTwo + weightThree + weightFour + weightFive;
+      double[] MyArray = new double[5];
+      MyArray[0] = weightOne;
+      MyArray[1] = weightTwo;
+      MyArray[2] = weightThree;
+      MyArray[3] = weightFour;
+      MyArray[4] = weightFive;
+      System.out.printf("You entered: " + "%.1f %.1f %.1f %.1f %.1f ", weightOne, weightTwo, weightThree, weightFour, weightFive);
+      double average = sum / 5;
+      System.out.println();
+      System.out.println("Total weight: " + sum);
+      System.out.println("Average weight: " + average);
+      double max = MyArray[0];
+      for (int counter = 1; counter < MyArray.length; counter++){
+         if (MyArray[counter] > max){
+            max = MyArray[counter];
+         }
+      }
+      System.out.println("Max weight: " + max);
+   }
+   }
