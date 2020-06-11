@@ -1,0 +1,48 @@
+//(1) Prompt the user for a string that contains two strings separated by a comma.
+//Examples of strings that can be accepted:
+//Jill, Allen
+//Jill , Allen
+//Jill,Allen
+
+//(2) Report an error if the input string does not contain a comma. Continue to prompt until a valid string is entered. Note: If the input contains a comma, then assume that the input also contains two strings
+//(3) Extract the two words from the input string and remove any spaces. Store the strings in two separate variables and output the strings.
+//(4) Using a loop, extend the program to handle multiple lines of input. Continue until the user enters q to quit. (2 pts)
+
+import java.util.Scanner;
+ 
+public class ParseStrings {
+ 
+    public static void main(String[] args) {
+        Scanner scnr = new Scanner(System.in);
+ 
+        String userInput = " ";
+ 
+        String firstInput = " ";
+        String secondInput = " ";
+ 
+        System.out.println("Enter input string: ");
+        userInput = scnr.nextLine();
+        int index = userInput.indexOf(",");
+         
+       while (!userInput.equals("q")) {
+ 
+           if (!userInput.contains(",")) {
+               System.out.println("Error: No comma in string");
+           } 
+           else {
+               firstInput = userInput.substring(0, index);
+               secondInput = userInput.substring(index + 1);
+ 
+               System.out.printf("First word: %s\n", firstInput.trim());
+               System.out.printf("Second word: %s\n", secondInput.trim());
+               System.out.println();
+               System.out.println();
+           }
+           System.out.println("Enter input string: ");
+           userInput = scnr.nextLine();
+           index = userInput.indexOf(",");
+       }
+            }
+        }
+        
+    
