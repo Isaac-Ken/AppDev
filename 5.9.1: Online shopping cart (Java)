@@ -1,0 +1,122 @@
+//(1) Create two files to submit:
+//ItemToPurchase.java - Class definition
+//ShoppingCartPrinter.java - Contains main() method
+//Build the ItemToPurchase class with the following specifications:
+
+//Private fields
+//String itemName - Initialized in default constructor to "none"
+//int itemPrice - Initialized in default constructor to 0
+//int itemQuantity - Initialized in default constructor to 0
+//Default constructor
+//Public member methods (mutators & accessors)
+//setName() & getName() 
+//setPrice() & getPrice() 
+//setQuantity() & getQuantity() 
+
+(2) In main(), prompt the user for two items and create two objects of the ItemToPurchase class. Before prompting for the second item, call scnr.nextLine(); to allow the user to input a new string
+
+ItemsToPurchase.java
+
+   public class ItemToPurchase {
+   private String itemName;
+   private int itemPrice;
+   private int itemQuantity;
+
+public ItemToPurchase() {
+  itemName = "none";
+  itemPrice = 0;
+  itemQuantity = 0;
+  return;
+}
+
+public void setName(String name) {
+  itemName = name;
+}
+
+public void setPrice(int price) {
+   itemPrice = price;
+}
+
+public void setQuantity (int quantity) {
+   itemQuantity = quantity;       
+}
+
+public String getName() {
+  return itemName;
+}
+
+public int getPrice() {
+  return itemPrice;
+}
+
+public int getQuantity() {
+   return itemQuantity;
+}
+   
+   public void printItemPurchase() {
+      System.out.println(itemQuantity + " " + itemName + " $" + itemPrice +  
+                         " = $" + (itemPrice * itemQuantity));
+   }
+}
+
+ShoppingCartPrinter.java
+
+import java.util.Scanner;
+
+public class ShoppingCartPrinter {
+   public static void main(String[] args) {
+      Scanner scnr = new Scanner(System.in);
+      int i = 0;
+      String productName;
+      int productPrice = 0;
+      int productQuantity = 0;
+      int cartTotal = 0;
+  
+      ItemToPurchase item1 = new ItemToPurchase();
+      ItemToPurchase item2 = new ItemToPurchase();
+
+       System.out.println("Item 1");
+  System.out.println("Enter the item name: ");
+  productName = scnr.nextLine();                                         // Sets the variable productName for user input
+
+  System.out.println("Enter the item price: ");
+  productPrice = scnr.nextInt();                                         // Set the variable productPrice for user input
+
+  System.out.println("Enter the item quantity: ");
+  productQuantity = scnr.nextInt();                                      // Set the variable productQuantity for user user input
+  System.out.println("");
+
+  item1.setName(productName);
+  item1.setPrice(productPrice);
+  item1.setQuantity(productQuantity);
+
+  System.out.println("Item 2");
+  System.out.println("Enter the item name: ");
+  scnr.nextLine();
+  productName = scnr.nextLine();
+
+  System.out.println("Enter the item price: ");
+  productPrice = scnr.nextInt();
+
+  System.out.println("Enter the item quantity: ");
+  productQuantity = scnr.nextInt(); 
+  System.out.println("");
+
+  item2.setName(productName);
+  item2.setPrice(productPrice);
+  item2.setQuantity(productQuantity);
+
+  cartTotal = (item1.getPrice() * item1.getQuantity()) + (item2.getPrice() * item2.getQuantity());
+
+  System.out.println("TOTAL COST");
+  System.out.println(item1.getName() + " " + item1.getQuantity() + " @ $" + item1.getPrice()  + " = $" + (item1.getPrice() * item1.getQuantity()));
+
+  System.out.println(item2.getName() + " " + item2.getQuantity() + " @ $" + item2.getPrice()  + " = $" + (item2.getPrice() * item2.getQuantity()));
+  System.out.println("");
+
+  System.out.println("Total: $" + cartTotal);
+      
+      return;
+   }
+}
+
